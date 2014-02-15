@@ -50,7 +50,6 @@ Bundle 'duff/vim-bufonly'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'mattn/gist-vim'
 Bundle 'bling/vim-airline'
-Bundle 'Shougo/neocomplcache'
 " Bundle 'scrooloose/syntastic'
 
 set ignorecase smartcase
@@ -110,7 +109,8 @@ map <Leader>spy :set syntax=python ai et ts=4 sw=4 tw=0<CR>
 map <Leader>sr  :set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
 " mute the sounds
 set visualbell
- map <C-t> :NERDTreeToggle<CR>
+
+map <C-t> :NERDTreeToggle<CR>
 
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
@@ -133,6 +133,3 @@ let g:airline_powerline_fonts = 1
 " let g:syntastic_loc_list_height = 5
 " let g:syntastic_enable_highlighting = 0
 " let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
-
-" neocomplcache config
-let g:neocomplcache_enable_at_startup = 1
