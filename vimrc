@@ -38,7 +38,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'jgdavey/vim-turbux'
 Bundle 'skalnik/vim-vroom'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'jgdavey/vim-railscasts'
+Bundle 'chriskempson/base16-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'ggreer/the_silver_searcher'
 Bundle 'scrooloose/nerdtree'
@@ -51,13 +51,17 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'mattn/gist-vim'
 Bundle 'bling/vim-airline'
 " Bundle 'scrooloose/syntastic'
+" Railscast-theme
+" Bundle 'jgdavey/vim-railscasts'
 
 set ignorecase smartcase
 set background=dark
 set ruler
 set langmenu=none
 
-colorscheme railscasts
+let base16colorspace=256
+colorscheme base16-eighties
+
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
 
 set number
