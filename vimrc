@@ -121,6 +121,8 @@ map <C-t> :NERDTreeToggle<CR>
 " au WinEnter * set cursorcolumn
 " set cursorcolumn
 
+set cursorline                  " Highlight current line
+
 "Airline
 set guifont=Source_Code_Pro_for_Powerline:h15
 let g:Powerline_symbols = 'fancy'
