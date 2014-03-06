@@ -50,6 +50,7 @@ Bundle 'duff/vim-bufonly'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'mattn/gist-vim'
 Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
 " Bundle 'scrooloose/syntastic'
 " Railscast-theme
 " Bundle 'jgdavey/vim-railscasts'
