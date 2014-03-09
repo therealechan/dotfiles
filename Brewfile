@@ -12,3 +12,6 @@ install tmux
 
 # For macvim
 linkapps
+
+update # brew update
+doctor # brew doctor
