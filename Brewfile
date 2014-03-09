@@ -6,7 +6,6 @@ install leiningen
 install mysql
 install node
 install tig
-install zsh
 install tree
 install tmux
 
