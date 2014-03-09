@@ -13,5 +13,14 @@ install tmux
 # For macvim
 linkapps
 
-update # brew update
-doctor # brew doctor
+# Make sure we’re using the latest Homebrew
+update
+
+# brew doctor
+doctor
+
+#brew upgrade
+upgrade
+
+# brew cleanup
+cleanup
