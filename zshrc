@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="chankaward"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mvim ~/.zshrc"
+alias ohmyzsh="mvim ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,7 +30,7 @@ export UPDATE_ZSH_DAYS=7
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -46,12 +46,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
-# rsync web files
-alias 'rsync-nanfang'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/thenanfang.com/shared/public/uploads/ /Users/edwardchan/bean.smile/nanfang-web/public/uploads"
-
-# rsync blog files
-alias 'rsync-blog'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/blog.thenanfang.com/shared/public/uploads/ /Users/edwardchan/bean.smile/nanfang-blog/wp-content/uploads"
-# rails
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
@@ -60,6 +54,8 @@ alias 'rsync-blog'="rsync -avrt --recursive --times --rsh=ssh --compress --human
 export VIM_APP_DIR=/Applications
 # Finished MacVim environment
 
+# shortcut for psql
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 #export PS1="@\h:\w $"
 
 #sets up theprompt color (currently a green similar to linux terminal)
@@ -99,13 +95,6 @@ alias r='rails'
 alias g='git'
 alias h='heroku'
 alias m='mvim'
-
-alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
-# rsync web files
-alias 'rsync-nanfang'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/thenanfang.com/shared/public/uploads/ /Users/edwardchan/bean.smile/nanfang-web/public/uploads"
-
-# rsync blog files
-alias 'rsync-blog'="rsync -avrt --recursive --times --rsh=ssh --compress --human-readable --progress --delete deploy@thenanfang.com:/var/www/blog.thenanfang.com/shared/public/uploads/ /Users/edwardchan/bean.smile/nanfang-blog/wp-content/uploads"
 
 # deploy
 alias deploy-staging="cap staging deploy"
