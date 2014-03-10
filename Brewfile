@@ -8,6 +8,7 @@ install node
 install tig
 install tree
 install tmux
+install imagemagick
 
 # For macvim
 linkapps
