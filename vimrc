@@ -52,6 +52,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'slim-template/vim-slim'
+Bundle 'terryma/vim-multiple-cursors'
 " Bundle 'scrooloose/syntastic'
 " Railscast-theme
 " Bundle 'jgdavey/vim-railscasts'
