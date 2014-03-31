@@ -90,6 +90,7 @@ alias vi='vim'
 alias ll='ls -l'
 alias gmt='git mergetool'
 alias gtt='gittower'
+alias gbranchdelete="git branch -D"
 
 alias r='rails'
 alias g='git'
