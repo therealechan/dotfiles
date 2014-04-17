@@ -128,11 +128,11 @@ map <C-t> :NERDTreeToggle<CR>
 set cursorline                  " Highlight current line
 
 "Airline
-set guifont=Source_Code_Pro_for_Powerline:h15
+" set guifont=Source_Code_Pro_for_Powerline:h15
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
 " set guifont=Liberation_Mono_for_Powerline:h17
-" set guifont=Ubuntu_Mono_derivative_Powerline:h19
+set guifont=Ubuntu_Mono_derivative_Powerline:h17
 " set guifont=Droid_Sans_Mono_for_Powerline:h17
 
 " syntastic
