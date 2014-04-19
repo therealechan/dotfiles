@@ -91,8 +91,8 @@ alias ll='ls -l'
 alias gmt='git mergetool'
 alias gtt='gittower'
 alias gbranchdelete="git branch -D"
-alias gdevelop-update='git checkout develop && git pull origin develop'
-alias gmaster-update='git checkout master && git pull origin master'
+alias gdevupdate='git checkout develop && git pull origin develop'
+alias gmasupdate='git checkout master && git pull origin master'
 
 alias r='rails'
 alias g='git'
