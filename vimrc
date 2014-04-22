@@ -11,6 +11,8 @@ set backspace+=indent,eol,start
 " translated to English).
 
 set nocompatible
+" auto reload file after change
+set autoread
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
