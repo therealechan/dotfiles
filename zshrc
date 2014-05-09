@@ -47,9 +47,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
 # MacVim
 export VIM_APP_DIR=/Applications
 # Finished MacVim environment
@@ -115,3 +112,6 @@ alias deploy-production-rake="cap production remote:rake"
 alias deploy-production-console="cap remote:console"
 alias deploy-production-database-update="cap production update:database"
 alias deploy-production-tail-log="cap remote:tail_log"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
