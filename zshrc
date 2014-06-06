@@ -90,6 +90,7 @@ alias gtt='gittower'
 alias gbranchdelete="git branch -D"
 alias gdu='git checkout develop && git pull origin develop'
 alias gmu='git checkout master && git pull origin master'
+alias gs='git status'
 
 alias r='rails'
 alias g='git'
