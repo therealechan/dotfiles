@@ -58,6 +58,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'chankaward/codeschool-vim-color'
 " Plugin 'scrooloose/syntastic'
 " Railscast-theme
 " Plugin 'jgdavey/vim-railscasts'
@@ -70,9 +71,14 @@ set background=dark
 set ruler
 set langmenu=none
 
-let base16colorspace=256
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set go-=L " Removes left hand scroll bar
+
+" let base16colorspace=256
 " colorscheme base16-eighties
-colorscheme base16-flat
+" colorscheme base16-flat
+colorscheme CodeSchool
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
 
