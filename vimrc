@@ -59,6 +59,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'chankaward/codeschool-vim-color'
+Plugin 'szw/vim-ctrlspace'
 " Plugin 'scrooloose/syntastic'
 " Railscast-theme
 " Plugin 'jgdavey/vim-railscasts'
@@ -81,6 +82,8 @@ set go-=L " Removes left hand scroll bar
 colorscheme CodeSchool
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
+
+set hidden
 
 set number
 "set guifont=AnonymousProMinus:h18.5
