@@ -96,6 +96,7 @@ alias r='rails'
 alias g='git'
 alias h='heroku'
 alias m='mvim'
+alias st='sublime'
 
 # deploy
 alias deploy-staging="cap staging deploy"
