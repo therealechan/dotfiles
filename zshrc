@@ -96,7 +96,7 @@ alias r='rails'
 alias g='git'
 alias h='heroku'
 alias m='mvim'
-alias st='sublime'
+alias subl='sublime'
 alias ts='tig status'
 
 # deploy
