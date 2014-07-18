@@ -60,6 +60,7 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'chankaward/codeschool-vim-color'
 Plugin 'szw/vim-ctrlspace'
+Plugin 'ervandew/supertab'
 " Plugin 'scrooloose/syntastic'
 " Railscast-theme
 " Plugin 'jgdavey/vim-railscasts'
