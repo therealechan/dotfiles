@@ -119,3 +119,5 @@ alias deploy-production-tail-log="cap remote:tail_log"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export PATH=/usr/local/bin:$PATH # load homebrew git
