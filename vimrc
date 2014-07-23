@@ -59,8 +59,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'chankaward/codeschool-vim-color'
-Plugin 'szw/vim-ctrlspace'
 Plugin 'ervandew/supertab'
+" Plugin 'szw/vim-ctrlspace'
 " Plugin 'scrooloose/syntastic'
 " Railscast-theme
 " Plugin 'jgdavey/vim-railscasts'
@@ -150,7 +150,7 @@ set cursorline                  " Highlight current line
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
 " set guifont=Liberation_Mono_for_Powerline:h17
-set guifont=Ubuntu_Mono_derivative_Powerline:h18
+set guifont=Ubuntu_Mono_derivative_Powerline:h17
 " set guifont=Droid_Sans_Mono_for_Powerline:h17
 
 " syntastic
