@@ -80,7 +80,8 @@ set go-=L " Removes left hand scroll bar
 " let base16colorspace=256
 " colorscheme base16-eighties
 " colorscheme base16-flat
-colorscheme CodeSchool
+colorscheme base16-default
+" colorscheme CodeSchool
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
 
