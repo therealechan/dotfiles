@@ -151,7 +151,7 @@ set cursorline                  " Highlight current line
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
 " set guifont=Liberation_Mono_for_Powerline:h17
-set guifont=Ubuntu_Mono_derivative_Powerline:h16
+set guifont=Ubuntu_Mono_derivative_Powerline:h18
 " set guifont=Droid_Sans_Mono_for_Powerline:h17
 
 " syntastic
