@@ -54,7 +54,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/dash.vim'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
-Plugin 'altercation/vim-colors-solarized'
 " Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
@@ -69,10 +68,9 @@ set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 
-" let base16colorspace=256
+let base16colorspace=256
 " colorscheme base16-eighties
-" colorscheme base16-flat
-colorscheme solarized
+colorscheme base16-flat
 " colorscheme base16-default
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
