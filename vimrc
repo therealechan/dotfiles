@@ -3,7 +3,7 @@
 " Maintainer:	Edward Chan <chankaward@gmail.com>
 
 " The default for 'backspace' is very confusing to new users, so change it to a
-" more sensible value.  Add "set backspace&" to your ~/.vimrc to reset it.
+" more sensible value.  Add 'set backspace&' to your ~/.vimrc to reset it.
 set backspace+=indent,eol,start
 
 " Disable localized menus for now since only some items are translated (e.g.
@@ -53,6 +53,8 @@ Plugin 'slim-template/vim-slim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/dash.vim'
 Plugin 'ervandew/supertab'
+Plugin 'mattn/emmet-vim'
+Plugin 'altercation/vim-colors-solarized'
 " Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
@@ -69,7 +71,8 @@ set go-=L " Removes left hand scroll bar
 
 " let base16colorspace=256
 " colorscheme base16-eighties
-colorscheme base16-flat
+" colorscheme base16-flat
+colorscheme solarized
 " colorscheme base16-default
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
@@ -127,6 +130,9 @@ map <Leader>sr  :set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
 set visualbell
 
 map <C-t> :NERDTreeToggle<CR>
+
+"emmet To remap the default <C-Y> leader:
+let g:user_emmet_leader_key='<C-Z>'
 
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
