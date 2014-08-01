@@ -9,6 +9,7 @@ install tig
 install tree
 install tmux
 install imagemagick
+install git-extras
 
 # For macvim
 linkapps
