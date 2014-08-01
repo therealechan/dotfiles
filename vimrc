@@ -39,16 +39,11 @@ Plugin 'godlygeek/tabular'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jgdavey/vim-turbux'
-Plugin 'skalnik/vim-vroom'
-Plugin 'tpope/vim-vividchalk'
 Plugin 'chriskempson/base16-vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'ggreer/the_silver_searcher'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'goldfeld/vim-seek'
-Plugin 'vim-scripts/ZoomWin'
+Plugin 'Lokaltog/vim-easymotion' " ,,w
 Plugin 'duff/vim-bufonly'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mattn/gist-vim'
@@ -56,14 +51,9 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'chankaward/codeschool-vim-color'
 Plugin 'ervandew/supertab'
-" Plugin 'szw/vim-ctrlspace'
 " Plugin 'scrooloose/syntastic'
-" Railscast-theme
-" Plugin 'jgdavey/vim-railscasts'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -81,7 +71,6 @@ set go-=L " Removes left hand scroll bar
 " colorscheme base16-eighties
 " colorscheme base16-flat
 colorscheme base16-default
-" colorscheme CodeSchool
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
 
@@ -95,8 +84,8 @@ set noswapfile
 set list
 set listchars=trail:-,tab:--
 
-set expandtab
 set smarttab
+set expandtab
 
 set laststatus=2
 set autoindent
@@ -162,3 +151,6 @@ set guifont=Ubuntu_Mono_derivative_Powerline:h18
 " let g:syntastic_loc_list_height = 5
 " let g:syntastic_enable_highlighting = 0
 " let g:syntastic_mode_map = { 'passive_filetypes': ['scss', 'slim'] }
+
+" vim-javascript setting
+set regexpengine=1
