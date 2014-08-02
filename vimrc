@@ -158,3 +158,6 @@ set guifont=Ubuntu_Mono_derivative_Powerline:h18
 
 " vim-javascript setting
 set regexpengine=1
+
+" vim markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
