@@ -39,7 +39,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jgdavey/vim-turbux'
-Plugin 'chriskempson/base16-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
@@ -54,7 +53,9 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/dash.vim'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
+Plugin 'Sanwuist/base16-flat-vim-color'
 " Plugin 'scrooloose/syntastic'
+" Plugin 'chriskempson/base16-vim'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -70,7 +71,7 @@ set go-=L " Removes left hand scroll bar
 
 let base16colorspace=256
 " colorscheme base16-eighties
-colorscheme base16-flat
+colorscheme base16-flat-sanwuist
 " colorscheme base16-default
 
 " hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
