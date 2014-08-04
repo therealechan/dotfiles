@@ -142,6 +142,14 @@ vnoremap L g_
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Easier linewise reselection of what you just pasted.
+nnoremap <leader>V V`]
+
+" Indent/dedent/autoindent what you just pasted.
+nnoremap <lt>> V`]<
+nnoremap ><lt> V`]>
+nnoremap =- V`]=
+
 " NerdTree
 map <C-t> :NERDTreeToggle<CR>
 
