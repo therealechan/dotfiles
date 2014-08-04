@@ -64,31 +64,16 @@ set ignorecase smartcase
 set background=dark
 set ruler
 set langmenu=none
-
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
-
-let base16colorspace=256
-" colorscheme base16-eighties
-colorscheme sanwuist-base16-flat
-" colorscheme base16-default
-
-" hi Normal                    guifg=#E6E1DC guibg=#2B2B2B ctermfg=254 ctermbg=NONE
-
 set hidden
-
 set number
-"set guifont=AnonymousProMinus:h18.5
-"set guifont=menlo:h16
 set noswapfile
-
 set list
 set listchars=trail:-,tab:--
-
 set smarttab
 set expandtab
-
 set laststatus=2
 set autoindent
 set smartindent
@@ -102,6 +87,14 @@ set wildmode=list:longest,full
 set splitright
 set splitbelow
 set incsearch
+set visualbell                  " mute the sounds
+set cursorline                  " Highlight current line
+
+let base16colorspace=256
+" colorscheme base16-eighties
+colorscheme sanwuist-base16-flat
+" colorscheme base16-default
+
 execute pathogen#infect()
 
 " ctrlP
@@ -140,9 +133,6 @@ augroup END
 
 " }}}
 
-" mute the sounds
-set visualbell
-
 map <C-t> :NERDTreeToggle<CR>
 
 "emmet To remap the default <C-Y> leader:
@@ -152,8 +142,6 @@ let g:user_emmet_leader_key='<C-Z>'
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorcolumn
 " set cursorcolumn
-
-set cursorline                  " Highlight current line
 
 "Airline
 " set guifont=Source_Code_Pro_for_Powerline:h15
