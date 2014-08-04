@@ -152,6 +152,7 @@ nnoremap =- V`]=
 
 " NerdTree
 map <C-t> :NERDTreeToggle<CR>
+let NERDTreeHighlightCursorline = 1
 
 "emmet To remap the default <C-Y> leader:
 let g:user_emmet_leader_key='<C-Z>'
