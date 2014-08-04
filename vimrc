@@ -133,6 +133,11 @@ augroup END
 
 " }}}
 
+" Easier to type, and I never use the default behavior.
+noremap H ^
+noremap L $
+vnoremap L g_
+
 map <C-t> :NERDTreeToggle<CR>
 
 "emmet To remap the default <C-Y> leader:
