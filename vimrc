@@ -138,6 +138,11 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" NerdTree
 map <C-t> :NERDTreeToggle<CR>
 
 "emmet To remap the default <C-Y> leader:
