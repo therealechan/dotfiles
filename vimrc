@@ -89,6 +89,7 @@ set splitbelow
 set incsearch
 set visualbell                  " mute the sounds
 set cursorline                  " Highlight current line
+set hlsearch                    " Highlighting search matches
 
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=800
