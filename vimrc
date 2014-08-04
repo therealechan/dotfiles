@@ -125,6 +125,21 @@ let mapleader=","
 map <Leader>spe :set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
 map <Leader>spy :set syntax=python ai et ts=4 sw=4 tw=0<CR>
 map <Leader>sr  :set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
+
+" Line Return {{{
+
+" Make sure Vim returns to the same line when you reopen a file.
+" Thanks, Amit
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+" }}}
+
 " mute the sounds
 set visualbell
 
