@@ -53,7 +53,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/dash.vim'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
-Plugin 'Sanwuist/base16-flat-sanwuist'
+Plugin 'Sanwuist/sanwuist-base16-flat'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'chriskempson/base16-vim'
 
