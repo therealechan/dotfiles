@@ -90,6 +90,9 @@ set incsearch
 set visualbell                  " mute the sounds
 set cursorline                  " Highlight current line
 
+" Don't try to highlight lines longer than 800 characters.
+set synmaxcol=800
+
 let base16colorspace=256
 " colorscheme base16-eighties
 colorscheme sanwuist-base16-flat
