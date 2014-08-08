@@ -171,7 +171,7 @@ let g:SuperTabCrMapping = 1
 "}}}
 
 "emmet To remap the default <C-Y> leader:
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<C-Z>' " ctrl + z + ,
 
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
