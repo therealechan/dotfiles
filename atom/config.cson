@@ -1,6 +1,10 @@
 'editor':
   'fontSize': 15
   'showInvisibles': true
+  'invisibles':
+    'space': '.'
+    'cr': ''
+    'eol': ''
 'core':
   'themes': [
     'atom-dark-ui'
