@@ -6,6 +6,10 @@
     'atom-dark-ui'
     'base16-tomorrow-dark-theme'
   ]
+'whitespace':
+  'ensureSingleTrailingNewline': true
+  'removeTrailingWhitespace': true
+  'ignoreWhitespaceOnCurrentLine': false
 'exception-reporting':
   'userId': '2849baab-b308-ebf1-8b8d-e7152846e14b'
 'welcome':
