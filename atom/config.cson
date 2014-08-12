@@ -1,0 +1,13 @@
+'editor':
+  'fontSize': 15
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'base16-tomorrow-dark-theme'
+  ]
+'exception-reporting':
+  'userId': '2849baab-b308-ebf1-8b8d-e7152846e14b'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': 'e453d66bbb4ee5b7dfdb3bbff6b22f211b0695c8'
