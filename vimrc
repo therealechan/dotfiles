@@ -46,7 +46,7 @@ Plugin 'Lokaltog/vim-easymotion' " ,,w
 Plugin 'duff/vim-bufonly'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mattn/gist-vim'
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -91,6 +91,8 @@ set visualbell                  " mute the sounds
 set cursorline                  " Highlight current line
 set hlsearch                    " Highlighting search matches
 set showmatch
+
+set guifont=Monaco:h14
 
 " Ctrl C + l to clean search result
 noremap <silent> <c-l> :nohls<cr><c-l>
@@ -180,10 +182,10 @@ let g:user_emmet_leader_key='<C-Z>' " ctrl + z + ,
 
 "Airline
 " set guifont=Source_Code_Pro_for_Powerline:h15
-let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 1
+" let g:Powerline_symbols = 'fancy'
+" let g:airline_powerline_fonts = 1
 " set guifont=Liberation_Mono_for_Powerline:h17
-set guifont=Ubuntu_Mono_derivative_Powerline:h16
+" set guifont=Ubuntu_Mono_derivative_Powerline:h16
 " set guifont=Droid_Sans_Mono_for_Powerline:h17
 
 " syntastic
