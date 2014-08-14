@@ -175,6 +175,11 @@ let g:SuperTabCrMapping = 1
 " emmet To remap the default <C-Y> leader:
 let g:user_emmet_leader_key='<C-Z>' " ctrl + z + ,
 
+" Ruby complete
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorcolumn
