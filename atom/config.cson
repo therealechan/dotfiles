@@ -22,3 +22,5 @@
   'ignoreWhitespaceOnCurrentLine': false
 'highlight-line':
   'hideHighlightOnSelect': true
+'vim-mode':
+  'commandModeInputViewFontSize': 15
