@@ -46,7 +46,6 @@ Plugin 'Lokaltog/vim-easymotion' " ,,w
 Plugin 'duff/vim-bufonly'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mattn/gist-vim'
-" Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -54,6 +53,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'Sanwuist/sanwuist-base16-flat'
+" Plugin 'bling/vim-airline'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'chriskempson/base16-vim'
 
@@ -172,7 +172,7 @@ let g:SuperTabCrMapping = 1
 
 "}}}
 
-"emmet To remap the default <C-Y> leader:
+" emmet To remap the default <C-Y> leader:
 let g:user_emmet_leader_key='<C-Z>' " ctrl + z + ,
 
 " hightline the current line
@@ -180,7 +180,7 @@ let g:user_emmet_leader_key='<C-Z>' " ctrl + z + ,
 " au WinEnter * set cursorcolumn
 " set cursorcolumn
 
-"Airline
+" Airline
 " set guifont=Source_Code_Pro_for_Powerline:h15
 " let g:Powerline_symbols = 'fancy'
 " let g:airline_powerline_fonts = 1
