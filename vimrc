@@ -54,10 +54,9 @@ Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'Sanwuist/sanwuist-base16-flat'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'jpo/vim-railscasts-theme'
+Plugin 'chankaward/vim-railscasts-theme'
 " Plugin 'bling/vim-airline'
 " Plugin 'scrooloose/syntastic'
-" Plugin 'chriskempson/base16-vim'
 
 call vundle#end()            " required
 filetype plugin indent on
