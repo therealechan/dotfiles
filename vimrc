@@ -108,6 +108,9 @@ colorscheme Railscasts
 
 execute pathogen#infect()
 
+" gitgutter
+let g:gitgutter_escape_grep = 1
+
 " ctrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
