@@ -54,6 +54,7 @@ Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'Sanwuist/sanwuist-base16-flat'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'jpo/vim-railscasts-theme'
 " Plugin 'bling/vim-airline'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'chriskempson/base16-vim'
@@ -103,7 +104,7 @@ set synmaxcol=800
 
 let base16colorspace=256
 " colorscheme base16-eighties
-colorscheme sanwuist-base16-flat
+colorscheme Railscasts
 " colorscheme base16-default
 
 execute pathogen#infect()
