@@ -10,6 +10,7 @@ install tree
 install tmux
 install imagemagick
 install git-extras
+install the_silver_searcher
 
 # For macvim
 linkapps
