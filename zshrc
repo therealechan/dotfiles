@@ -45,6 +45,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# set Terminal encoding to UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
 
 # MacVim
