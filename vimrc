@@ -93,8 +93,6 @@ set cursorline                  " Highlight current line
 set hlsearch                    " Highlighting search matches
 set showmatch
 
-set guifont=Menlo:h15
-
 " Ctrl C + l to clean search result
 noremap <silent> <c-l> :nohls<cr><c-l>
 
