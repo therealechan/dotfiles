@@ -55,7 +55,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Sanwuist/sanwuist-base16-flat'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chankaward/vim-railscasts-theme'
-" Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
@@ -221,12 +221,9 @@ nnoremap <leader>I :call IndentGuides()<cr>
 " set cursorcolumn
 
 " Airline
-" set guifont=Source_Code_Pro_for_Powerline:h15
-" let g:Powerline_symbols = 'fancy'
-" let g:airline_powerline_fonts = 1
-" set guifont=Liberation_Mono_for_Powerline:h17
-" set guifont=Ubuntu_Mono_derivative_Powerline:h16
-" set guifont=Droid_Sans_Mono_for_Powerline:h17
+let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+set guifont=Ubuntu_Mono_derivative_Powerline:h15
 
 " syntastic
 " let g:syntastic_check_on_open = 1
