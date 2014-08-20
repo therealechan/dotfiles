@@ -187,6 +187,9 @@ let g:rubycomplete_rails = 1
 " Ag with ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" Clean trailing whitespace
+nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorcolumn
