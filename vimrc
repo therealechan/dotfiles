@@ -190,6 +190,10 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
+" Emacs bindings in command line mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorcolumn
