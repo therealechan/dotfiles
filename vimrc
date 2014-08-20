@@ -194,6 +194,9 @@ nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
+" Easier linewise reselection of what you just pasted.
+nnoremap <leader>V V`]
+
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorcolumn
