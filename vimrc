@@ -197,6 +197,9 @@ cnoremap <c-e> <end>
 " Easier linewise reselection of what you just pasted.
 nnoremap <leader>V V`]
 
+" Great for pasting
+nnoremap vv ^vg_
+
 " hightline the current line
 " au WinLeave * set nocursorline nocursorcolumn
 " au WinEnter * set cursorcolumn
