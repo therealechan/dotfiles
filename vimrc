@@ -174,6 +174,15 @@ let g:SuperTabCrMapping = 1
 
 "}}}
 
+" Surround {{{
+let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('=')} = "<%= \r %>"
+let g:surround_{char2nr('8')} = "/* \r */"
+let g:surround_{char2nr('s')} = " \r"
+let g:surround_{char2nr('^')} = "/^\r$/"
+let g:surround_indent = 1
+"}}}
+
 " emmet To remap the default <C-Y> leader:
 let g:user_emmet_leader_key='<C-Z>' " ctrl + z + ,
 
