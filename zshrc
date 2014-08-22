@@ -62,6 +62,12 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 #sets up theprompt color (currently a green similar to linux terminal)
 #export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ "
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export PATH=/usr/local/bin:$PATH # load homebrew git
+
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export EDITOR=mvim
@@ -91,7 +97,7 @@ alias vi='vim'
 alias ll='ls -l'
 alias gmt='git mergetool'
 alias gtt='gittower'
-alias gbranchdelete="git branch -D"
+alias gbd="git branch -D"
 alias gdu='git checkout develop && git pull origin develop'
 alias gmu='git checkout master && git pull origin master'
 alias gs='git status'
@@ -119,9 +125,3 @@ alias deploy-production-rake="cap production remote:rake"
 alias deploy-production-console="cap remote:console"
 alias deploy-production-database-update="cap production update:database"
 alias deploy-production-tail-log="cap remote:tail_log"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-export PATH=/usr/local/bin:$PATH # load homebrew git
