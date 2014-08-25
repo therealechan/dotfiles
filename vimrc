@@ -145,6 +145,15 @@ augroup END
 
 " }}}
 
+" Cursorline {{{
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
+" }}}
+
 " Easier to type, and I never use the default behavior.
 noremap H ^
 noremap L $
