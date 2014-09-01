@@ -75,6 +75,7 @@ export EDITOR=mvim
 alias gaa='git add --all'
 alias gap='git add -p'
 alias gb='git branch'
+alias gbm='git branch -m'
 # alias gc='git commit -v'
 # alias gca='git commit -a -v'
 alias gcm='git commit -m'
