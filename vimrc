@@ -58,6 +58,12 @@ Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'bling/vim-airline'
 " Plugin 'scrooloose/syntastic'
 
+" Snipmate requirements
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()            " required
 filetype plugin indent on
 
