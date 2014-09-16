@@ -15,7 +15,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 ### Install Dotfiles
 ```terminal
-git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+git clone git@github.com:chankaward/.dotfile.git ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
