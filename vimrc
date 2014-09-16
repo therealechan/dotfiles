@@ -110,8 +110,6 @@ let base16colorspace=256
 colorscheme Railscasts
 " colorscheme base16-default
 
-execute pathogen#infect()
-
 " gitgutter
 let g:gitgutter_escape_grep = 1
 
