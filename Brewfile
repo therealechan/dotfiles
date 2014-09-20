@@ -11,6 +11,7 @@ install tmux
 install imagemagick
 install git-extras
 install the_silver_searcher
+install elixir
 
 # For macvim
 linkapps
