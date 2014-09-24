@@ -188,7 +188,7 @@ let g:SuperTabCrMapping = 1
 "}}}
 
 " Surround {{{
-let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('%')} = "<% \r %>"
 let g:surround_{char2nr('=')} = "<%= \r %>"
 let g:surround_{char2nr('8')} = "/* \r */"
 let g:surround_{char2nr('s')} = " \r"
