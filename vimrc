@@ -161,6 +161,7 @@ augroup END
 " Easier to type, and I never use the default behavior.
 noremap H ^
 noremap L $
+noremap F %
 vnoremap L g_
 
 " Keep search matches in the middle of the window.
