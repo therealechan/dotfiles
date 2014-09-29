@@ -100,6 +100,7 @@ alias ll='ls -l'
 alias gmt='git mergetool'
 alias gtt='gittower'
 alias gbd="git branch -D"
+alias grbd="git push origin --delete"
 alias gdu='git checkout develop && git pull origin develop'
 alias gmu='git checkout master && git pull origin master'
 alias gs='git status'
