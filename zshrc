@@ -128,16 +128,3 @@ alias deploy-production-rake="cap production remote:rake"
 alias deploy-production-console="cap remote:console"
 alias deploy-production-database-update="cap production update:database"
 alias deploy-production-tail-log="cap remote:tail_log"
-
-# Setup zsh-autosuggestions
-source ~/.zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle

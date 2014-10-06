@@ -4,7 +4,6 @@ require 'erb'
 desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
-  install_zsh_autosuggestions
   install_zsh_syntax_highlighting
   switch_to_zsh
   install_vundle
@@ -94,23 +93,6 @@ def install_oh_my_zsh
       exit
     else
       puts "skipping oh-my-zsh, you will need to change ~/.zshrc"
-    end
-  end
-end
-
-def install_zsh_autosuggestions
-  if File.exist?(File.join(ENV['HOME'], ".zsh-autosuggestions"))
-    puts "found ~/.zsh-autosuggestions"
-  else
-    print "install zsh-autosuggestions? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-      puts "install zsh-autosuggestions"
-      system %Q{git clone git://github.com/tarruda/zsh-autosuggestions "$HOME/.zsh-autosuggestions"}
-    when 'q'
-      exit
-    else
-      puts "skipping zsh-autosuggestions, you will need to change ~/.zsh-autosuggestions"
     end
   end
 end
