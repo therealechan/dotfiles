@@ -5,6 +5,7 @@ desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   install_zsh_autosuggestions
+  install_zsh_syntax_highlighting
   switch_to_zsh
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh atom]
@@ -109,6 +110,23 @@ def install_zsh_autosuggestions
       exit
     else
       puts "skipping zsh-autosuggestions, you will need to change ~/.zsh-autosuggestions"
+    end
+  end
+end
+
+def install_zsh_syntax_highlighting
+  if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"))
+    puts "found ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  else
+    print "install zsh-syntax-highlighting? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+      puts "install zsh-syntax-highlighting"
+      system %Q{git clone git://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"}
+    when 'q'
+      exit
+    else
+      puts "skipping zsh-syntax-highlighting, you will need to change ~/.oh-my-zsh/custom/plugins"
     end
   end
 end
