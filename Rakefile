@@ -7,6 +7,7 @@ task :install do
   install_zsh_autosuggestions
   install_zsh_syntax_highlighting
   switch_to_zsh
+  install_vundle
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh atom]
   files += Dir['atom/*']
@@ -40,7 +41,7 @@ task :install do
 end
 
 def install_vundle
-  system %Q{git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle}
+  system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
 end
 
 def replace_file(file)
