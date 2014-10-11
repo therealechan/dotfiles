@@ -50,3 +50,5 @@ chsh -s /bin/bash # change back to Bash if you want
 ```
 
 Then open a new terminal window to see the effects.
+
+Also you can use my iTerm2 [colorscheme](https://github.com/chankaward/railscasts-iterm2) if you like it
