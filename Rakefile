@@ -121,6 +121,13 @@ def install_zsh_syntax_highlighting
 end
 
 def install_homebrew_packages
+  system %Q{which brew}
+  unless $?.success?
+    system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+  else
+    puts "looks you've already install Homebrew"
+  end
+
   print "install homebrew packages? [ynq]"
   case $stdin.gets.chomp
   when 'y'
@@ -131,13 +138,26 @@ def install_homebrew_packages
   else
     puts "skipping install homebrew packages"
   end
+  puts "======================================================"
+  puts "running 'brew linkapps'"
+  puts "======================================================"
   system %Q{brew linkapps}
+  puts
+  puts "======================================================"
   puts "running 'brew update'"
+  puts "======================================================"
   system %Q{brew update}
-  puts "running 'brew doctor'"
+  puts
+  puts "======================================================"
+  puts "running 'brew doctor''"
+  puts "======================================================"
   system %Q{brew doctor}
+  puts
+  puts "======================================================"
   puts "running 'brew upgrade'"
+  puts "======================================================"
   system %Q{brew upgrade}
   system %Q{brew cleanup}
+  puts
   puts "finish install homebrew packages"
 end
