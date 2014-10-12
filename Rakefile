@@ -40,7 +40,11 @@ task :install do
 end
 
 def install_vundle
-  system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
+  if File.exist?(File.join(ENV['HOME'], ".vim/bundle/Vundle.vim"))
+    puts "found ~/.vim/bundle/Vundle.vim"
+  else
+    system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
+  end
 end
 
 def replace_file(file)
