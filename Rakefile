@@ -4,6 +4,7 @@ require 'erb'
 desc "install the dot files into user's home directory"
 task :install do
   install_homebrew_packages
+  install_fonts
   install_oh_my_zsh
   install_zsh_syntax_highlighting
   switch_to_zsh
@@ -160,4 +161,9 @@ def install_homebrew_packages
   system %Q{brew cleanup}
   puts
   puts "finish install homebrew packages"
+end
+
+def install_fonts
+  puts "installing custom font."
+  system %Q{cp -f $HOME/.dotfile/fonts/* $HOME/Library/Fonts}
 end
