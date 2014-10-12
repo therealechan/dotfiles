@@ -2,7 +2,7 @@
 
 This dotfile base on [Ryan Bates dotfile](https://github.com/ryanb/dotfiles), custom by me.
 
-I am running on Mac OS X, but it will likely work on Linux as well.
+I am running on Mac OS X.
 
 
 ## Installation
