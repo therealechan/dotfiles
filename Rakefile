@@ -3,6 +3,7 @@ require 'erb'
 
 desc "install the dot files into user's home directory"
 task :install do
+  install_homebrew_packages
   install_oh_my_zsh
   install_zsh_syntax_highlighting
   switch_to_zsh
@@ -116,4 +117,26 @@ def install_zsh_syntax_highlighting
       puts "skipping zsh-syntax-highlighting, you will need to change ~/.oh-my-zsh/custom/plugins"
     end
   end
+end
+
+def install_homebrew_packages
+  print "install homebrew packages? [ynq]"
+  case $stdin.gets.chomp
+  when 'y'
+    puts "installing homebrew packages"
+    system %Q{brew install macvim autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher}
+  when 'q'
+    exit
+  else
+    puts "skipping install homebrew packages"
+  end
+  system %Q{brew linkapps}
+  puts "running 'brew update'"
+  system %Q{brew update}
+  puts "running 'brew doctor'"
+  system %Q{brew doctor}
+  puts "running 'brew upgrade'"
+  system %Q{brew upgrade}
+  system %Q{brew cleanup}
+  puts "finish install homebrew packages"
 end
