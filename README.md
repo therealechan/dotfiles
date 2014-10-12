@@ -11,7 +11,7 @@ Run the following commands in your terminal. It will prompt you before it does a
 
 ### Install Dotfiles
 ```terminal
-git clone git@github.com:chankaward/.dotfile.git ~/.dotfiles
+git clone git@github.com:chankaward/dotfile.git ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
