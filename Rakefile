@@ -133,7 +133,8 @@ def install_homebrew_packages
   case $stdin.gets.chomp
   when 'y'
     puts "installing homebrew packages"
-    system %Q{brew install macvim autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher}
+    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher}
+    system %Q{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
   when 'q'
     exit
   else
