@@ -165,5 +165,5 @@ end
 
 def install_fonts
   puts "installing custom font."
-  system %Q{cp -f $HOME/.dotfile/fonts/* $HOME/Library/Fonts}
+  system %Q{cp -f $HOME/.dotfiles/fonts/* $HOME/Library/Fonts}
 end
