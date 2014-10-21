@@ -13,7 +13,6 @@ task :install do
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh atom]
   files += Dir['atom/*']
   files << "oh-my-zsh/custom/vpn.zsh"
-  files << "oh-my-zsh/custom/vi-mode.zsh"
   files << "oh-my-zsh/custom/chankaward.zsh-theme"
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
