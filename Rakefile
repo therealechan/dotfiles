@@ -10,7 +10,7 @@ task :install do
   switch_to_zsh
   install_vundle
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh atom]
+  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh atom]
   files += Dir['atom/*']
   files << "oh-my-zsh/custom/vpn.zsh"
   files << "oh-my-zsh/custom/chankaward.zsh-theme"
