@@ -134,6 +134,7 @@ def install_homebrew_packages
     puts "installing homebrew packages"
     system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher terminal-notifier}
     system %Q{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
+    system %Q{brew install --HEAD https://raw.githubusercontent.com/chankaward/tn/master/tn.rb}
   when 'q'
     exit
   else
