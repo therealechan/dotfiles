@@ -49,8 +49,6 @@ source $ZSH/oh-my-zsh.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
-
 # MacVim
 export VIM_APP_DIR=/Applications
 # Finished MacVim environment
@@ -62,16 +60,28 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 #sets up theprompt color (currently a green similar to linux terminal)
 #export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ "
 
+# rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export PATH=/usr/local/bin:$PATH # load homebrew git
 
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-export EDITOR=mvim
+export EDITOR=mvim # set default editor
 
+# basic
+alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
+alias r='rails'
+alias h='heroku'
+alias m='mvim'
+alias subl='sublime'
+alias ts='tig status'
+alias vi='vim'
+alias ll='ls -l'
+
+# git
+alias g='git'
 alias gaa='git add --all'
 alias gap='git add -p'
 alias gb='git branch'
@@ -96,8 +106,6 @@ alias gr='git rebase'
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
-alias vi='vim'
-alias ll='ls -l'
 alias gmt='git mergetool'
 alias gtt='gittower'
 alias gbd="git branch -D"
@@ -105,13 +113,6 @@ alias grbd="git push origin --delete"
 alias gdu='git checkout develop && git pull origin develop'
 alias gmu='git checkout master && git pull origin master'
 alias gs='git status'
-
-alias r='rails'
-alias g='git'
-alias h='heroku'
-alias m='mvim'
-alias subl='sublime'
-alias ts='tig status'
 
 # deploy
 alias deploy-staging="cap staging deploy"
