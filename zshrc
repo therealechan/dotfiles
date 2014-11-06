@@ -87,7 +87,7 @@ alias gdc='git diff --cached'
 alias gdh='git diff HEAD'
 alias glod='git log --oneline --decorate'
 alias gln="git ln | perl -ple 's/\*/sprintf(\"%2s\", \$n++)/e' | less"
-alias gp='git push'
+alias gp='git push origin HEAD'
 alias gl='git pull'
 alias gl-rebase='git pull --rebase'
 alias grep='grep --color=auto --exclude="*~"'
