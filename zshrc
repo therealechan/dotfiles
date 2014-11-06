@@ -89,7 +89,7 @@ alias glod='git log --oneline --decorate'
 alias gln="git ln | perl -ple 's/\*/sprintf(\"%2s\", \$n++)/e' | less"
 alias gp='git push'
 alias gl='git pull'
-alias glr='git pull --rebase'
+alias gl-rebase='git pull --rebase'
 alias grep='grep --color=auto --exclude="*~"'
 alias gst='git status'
 alias gr='git rebase'
