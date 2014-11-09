@@ -22,9 +22,7 @@ Run the following commands in your terminal. It will prompt you before it does a
 
 ### Install Dotfiles
 ```terminal
-git clone git@github.com:chankaward/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-rake install
+sh -c "`curl https://raw.githubusercontent.com/chankaward/dotfiles/master/install.sh`"
 ```
 ### Install Vim Plugins
 ``` terminal
