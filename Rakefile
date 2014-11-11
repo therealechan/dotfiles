@@ -72,7 +72,7 @@ def switch_to_zsh
   if ENV["SHELL"] =~ /zsh/
     puts "using zsh"
   else
-    print "switch to zsh? (recommended) [ynq] "
+    print "switch to zsh? (recommended) [ynq]"
     case $stdin.gets.chomp
     when 'y'
       puts "switching to zsh"
@@ -89,7 +89,7 @@ def install_oh_my_zsh
   if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh"))
     puts "found ~/.oh-my-zsh"
   else
-    print "install oh-my-zsh? [ynq] "
+    print "install oh-my-zsh? [ynq]"
     case $stdin.gets.chomp
     when 'y'
       puts "installing oh-my-zsh"
@@ -124,7 +124,7 @@ def install_homebrew_packages
   unless $?.success?
     system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
   else
-    puts "looks you've already install Homebrew"
+    puts "you already have homebrew"
   end
 
   print "install homebrew packages? [ynq]"
@@ -139,24 +139,16 @@ def install_homebrew_packages
   else
     puts "skipping install homebrew packages"
   end
-  puts "======================================================"
   puts "running 'brew linkapps'"
-  puts "======================================================"
   system %Q{brew linkapps}
   puts
-  puts "======================================================"
   puts "running 'brew update'"
-  puts "======================================================"
   system %Q{brew update}
   puts
-  puts "======================================================"
-  puts "running 'brew doctor''"
-  puts "======================================================"
+  puts "running 'brew doctor'"
   system %Q{brew doctor}
   puts
-  puts "======================================================"
   puts "running 'brew upgrade'"
-  puts "======================================================"
   system %Q{brew upgrade}
   system %Q{brew cleanup}
   puts
@@ -164,6 +156,6 @@ def install_homebrew_packages
 end
 
 def install_fonts
-  puts "installing custom font."
+  puts "installing custom font"
   system %Q{cp -f $HOME/.dotfiles/fonts/* $HOME/Library/Fonts}
 end
