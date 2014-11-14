@@ -1,7 +1,7 @@
 require 'rake'
 require 'erb'
 
-desc "install the dot files into user's home directory"
+desc "install dotfiles to user's home directory"
 task :install do
   install_homebrew_packages
   install_fonts
