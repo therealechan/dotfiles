@@ -10,9 +10,7 @@ task :install do
   switch_to_zsh
   install_vundle
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh]
-  files << "oh-my-zsh/custom/vpn.zsh"
-  files << "oh-my-zsh/custom/chankaward.zsh-theme"
+  files = grep_dir_files
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
@@ -21,18 +19,7 @@ task :install do
       elsif replace_all
         replace_file(file)
       else
-        print "overwrite ~/.#{file.sub(/\.erb$/, '')}? [ynaq] "
-        case $stdin.gets.chomp
-        when 'a'
-          replace_all = true
-          replace_file(file)
-        when 'y'
-          replace_file(file)
-        when 'q'
-          exit
-        else
-          puts "skipping ~/.#{file.sub(/\.erb$/, '')}"
-        end
+        override_or_skip_file(file)
       end
     else
       link_file(file)
@@ -40,12 +27,26 @@ task :install do
   end
 end
 
-def install_vundle
-  if File.exist?(File.join(ENV['HOME'], ".vim/bundle/Vundle.vim"))
-    puts "found ~/.vim/bundle/Vundle.vim"
+def override_or_skip_file(file)
+  print "overwrite ~/.#{file.sub(/\.erb$/, '')}? [ynaq] "
+  case $stdin.gets.chomp
+  when 'a'
+    replace_all = true
+    replace_file(file)
+  when 'y'
+    replace_file(file)
+  when 'q'
+    exit
   else
-    system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
+    puts "skipping ~/.#{file.sub(/\.erb$/, '')}"
   end
+end
+
+def grep_dir_files
+  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh]
+  files << "oh-my-zsh/custom/vpn.zsh"
+  files << "oh-my-zsh/custom/chankaward.zsh-theme"
+  files
 end
 
 def replace_file(file)
@@ -139,20 +140,34 @@ def install_homebrew_packages
   else
     puts "skipping install homebrew packages"
   end
+  puts
   puts "running 'brew linkapps'"
   system %Q{brew linkapps}
+  puts
+  update_homebrew_packages
+  puts "finish install homebrew packages"
+end
+
+def update_homebrew_packages
+  puts "running 'brew doctor'"
+  system %Q{brew doctor}
   puts
   puts "running 'brew update'"
   system %Q{brew update}
   puts
-  puts "running 'brew doctor'"
-  system %Q{brew doctor}
-  puts
   puts "running 'brew upgrade'"
   system %Q{brew upgrade}
-  system %Q{brew cleanup}
   puts
-  puts "finish install homebrew packages"
+  puts "cleaning up cache"
+  system %Q{brew cleanup}
+end
+
+def install_vundle
+  if File.exist?(File.join(ENV['HOME'], ".vim/bundle/Vundle.vim"))
+    puts "found ~/.vim/bundle/Vundle.vim"
+  else
+    system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
+  end
 end
 
 def install_fonts
