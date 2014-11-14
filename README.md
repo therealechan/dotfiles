@@ -1,13 +1,11 @@
 ```ascii
- ____            __       ___      ___                    
-/\  _`\         /\ \__  /'___\ __ /\_ \                   
-\ \ \/\ \    ___\ \ ,_\/\ \__//\_\\//\ \      __    ____  
- \ \ \ \ \  / __`\ \ \/\ \ ,__\/\ \ \ \ \   /'__`\ /',__\ 
+ ____            __       ___      ___
+/\  _`\         /\ \__  /'___\ __ /\_ \
+\ \ \/\ \    ___\ \ ,_\/\ \__//\_\\//\ \      __    ____
+ \ \ \ \ \  / __`\ \ \/\ \ ,__\/\ \ \ \ \   /'__`\ /',__\
   \ \ \_\ \/\ \L\ \ \ \_\ \ \_/\ \ \ \_\ \_/\  __//\__, `\
    \ \____/\ \____/\ \__\\ \_\  \ \_\/\____\ \____\/\____/
-    \/___/  \/___/  \/__/ \/_/   \/_/\/____/\/____/\/___/ 
-                                                          
-                                                          
+    \/___/  \/___/  \/__/ \/_/   \/_/\/____/\/____/\/___/
 
 ```
 
@@ -22,7 +20,7 @@ Run the following commands in your terminal. It will prompt you before it does a
 
 ### Install Dotfiles
 ```terminal
-sh -c "`curl https://raw.githubusercontent.com/chankaward/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/dotfiles/master/install.sh`"
 ```
 ### Install Vim Plugins
 ``` terminal
