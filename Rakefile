@@ -27,6 +27,11 @@ task :install do
   end
 end
 
+desc "update the latest dotfiles"
+task :update do
+  system 'git pull origin master && rake install'
+end
+
 def override_or_skip_file(file)
   print "overwrite ~/.#{file.sub(/\.erb$/, '')}? [ynaq] "
   case $stdin.gets.chomp
@@ -43,7 +48,7 @@ def override_or_skip_file(file)
 end
 
 def grep_dir_files
-  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh]
+  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh fonts install.sh]
   files << "oh-my-zsh/custom/vpn.zsh"
   files << "oh-my-zsh/custom/chankaward.zsh-theme"
   files
