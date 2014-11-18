@@ -9,6 +9,7 @@ task :install do
   install_zsh_syntax_highlighting
   switch_to_zsh
   install_vundle
+  install_rbenv
   install_rbenv_plugins
   replace_all = false
   files = grep_dir_files
@@ -139,7 +140,6 @@ def install_homebrew_packages
   when 'y'
     puts "installing homebrew packages"
     system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher terminal-notifier}
-    system %Q{brew install rbenv ruby-build}
     system %Q{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
     system %Q{brew install --HEAD https://raw.githubusercontent.com/chankaward/tn/master/tn.rb}
   when 'q'
@@ -167,6 +167,19 @@ def update_homebrew_packages
   puts
   puts "cleaning up cache"
   system %Q{brew cleanup}
+end
+
+def install_rbenv
+  puts "WARNING: rbenv is incompatible with RVM. Please make sure to fully uninstall RVM and remove any references to it from your shell initialization files before installing rbenv."
+  print "install rbenv? [ynq]"
+  case $stdin.gets.chomp
+  when 'y'
+    system %Q{brew install rbenv ruby-build}
+  when 'q'
+    exit
+  else
+    puts "skipping install rbenv"
+  end
 end
 
 def install_rbenv_plugins
