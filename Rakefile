@@ -9,6 +9,7 @@ task :install do
   install_zsh_syntax_highlighting
   switch_to_zsh
   install_vundle
+  install_rbenv_plugins
   replace_all = false
   files = grep_dir_files
   files.each do |file|
@@ -166,6 +167,16 @@ def update_homebrew_packages
   puts
   puts "cleaning up cache"
   system %Q{brew cleanup}
+end
+
+def install_rbenv_plugins
+  if File.exist?(File.join(ENV['HOME'], ".rbenv/plugins/rbenv-gem-rehash"))
+    puts "found rbenv-gem-rehash && updating rbenv-gem-rehash"
+    system %Q{cd ~/.rbenv/plugins/rbenv-gem-rehash && git pull origin master}
+  else
+    puts "installing rbenv-gem-rehash"
+    system %Q{git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash}
+  end
 end
 
 def install_vundle
