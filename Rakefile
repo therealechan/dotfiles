@@ -183,13 +183,8 @@ def install_rbenv
 end
 
 def install_rbenv_plugins
-  if File.exist?(File.join(ENV['HOME'], ".rbenv/plugins/rbenv-gem-rehash"))
-    puts "found rbenv-gem-rehash && updating rbenv-gem-rehash"
-    system %Q{cd ~/.rbenv/plugins/rbenv-gem-rehash && git pull origin master}
-  else
-    puts "installing rbenv-gem-rehash"
-    system %Q{git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash}
-  end
+  puts "installing rbenv plugins"
+  system %Q{brew install rbenv-communal-gems rbenv-gem-rehash}
 end
 
 def install_vundle
