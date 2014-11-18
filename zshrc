@@ -60,9 +60,9 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 #sets up theprompt color (currently a green similar to linux terminal)
 #export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ "
 
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# rbenv
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 export PATH=/usr/local/bin:$PATH # load homebrew git
 
