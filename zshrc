@@ -87,6 +87,7 @@ alias gap='git add -p'
 alias gb='git branch'
 alias gb-rename='git branch -m' # rename git branch
 alias ulc='git reset --soft HEAD~1'
+alias clc='git commit --amend' # modify the last commit
 alias gp-force='git push --force'
 # alias gc='git commit -v'
 # alias gca='git commit -a -v'
