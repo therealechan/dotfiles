@@ -1,23 +1,33 @@
 require 'rake'
 require 'erb'
 
-desc "install dotfiles to user's home directory"
+desc "Install dotfiles to your's home directory"
 task :install do
-  install_homebrew_packages
-  install_fonts
+
+  # homebrew section
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    install_homebrew
+    brew_tasks
+    install_rbenv
+    install_terminal_notifier
+    install_macvim
+  end
+
+  # zsh section
   install_oh_my_zsh
   install_zsh_syntax_highlighting
   switch_to_zsh
-  install_vundle
-  install_rbenv
-  install_rbenv_plugins
+
+  install_fonts
+
+  # files operation
   replace_all = false
   files = grep_dir_files
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}")
-        puts "identical ~/.#{file.sub(/\.erb$/, '')}"
+        puts "Identical ~/.#{file.sub(/\.erb$/, '')}"
       elsif replace_all
         replace_file(file)
       else
@@ -29,23 +39,23 @@ task :install do
   end
 end
 
-desc "update the latest dotfiles"
+desc "Update the latest dotfiles"
 task :update do
   system 'git pull origin master && rake install'
 end
 
 def override_or_skip_file(file)
-  print "overwrite ~/.#{file.sub(/\.erb$/, '')}? [ynaq] "
+  puts "Overwrite ~/.#{file.sub(/\.erb$/, '')}? [y]es, [n]o, [a]ll, [e]xit   "
   case $stdin.gets.chomp
   when 'a'
     replace_all = true
     replace_file(file)
   when 'y'
     replace_file(file)
-  when 'q'
+  when 'e'
     exit
   else
-    puts "skipping ~/.#{file.sub(/\.erb$/, '')}"
+    puts "Skipping ~/.#{file.sub(/\.erb$/, '')}"
   end
 end
 
@@ -63,139 +73,148 @@ end
 
 def link_file(file)
   if file =~ /.erb$/
-    puts "generating ~/.#{file.sub(/\.erb$/, '')}"
+    puts "Generating ~/.#{file.sub(/\.erb$/, '')}"
     File.open(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"), 'w') do |new_file|
       new_file.write ERB.new(File.read(file)).result(binding)
     end
   elsif file =~ /zshrc$/ # copy zshrc instead of link
-    puts "copying ~/.#{file}"
+    puts "Copying ~/.#{file}"
     system %Q{cp "$PWD/#{file}" "$HOME/.#{file}"}
   else
-    puts "linking ~/.#{file}"
+    puts "Linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
 end
 
 def switch_to_zsh
   if ENV["SHELL"] =~ /zsh/
-    puts "using zsh"
+    puts "Using zsh"
   else
-    print "switch to zsh? (recommended) [ynq]"
+    puts "Switch to zsh? (recommended) [y]es, [n]o, [e]xit  "
     case $stdin.gets.chomp
     when 'y'
-      puts "switching to zsh"
+      puts "Switching to zsh"
       system %Q{chsh -s `which zsh`}
-    when 'q'
+    when 'e'
       exit
     else
-      puts "skipping zsh"
+      puts "Skipping zsh"
     end
   end
 end
 
 def install_oh_my_zsh
   if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh"))
-    puts "found ~/.oh-my-zsh"
+    puts "Found ~/.oh-my-zsh"
   else
-    print "install oh-my-zsh? [ynq]"
+    puts "Install oh-my-zsh? [y]es, [n]o, [e]xit  "
     case $stdin.gets.chomp
     when 'y'
-      puts "installing oh-my-zsh"
+      puts "Installing oh-my-zsh"
       system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"}
-    when 'q'
+    when 'e'
       exit
     else
-      puts "skipping oh-my-zsh, you will need to change ~/.zshrc"
+      puts "Skipping oh-my-zsh, you will need to change ~/.zshrc"
     end
   end
 end
 
 def install_zsh_syntax_highlighting
   if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"))
-    puts "found ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    puts "Found ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
   else
-    print "install zsh-syntax-highlighting? [ynq]"
+    puts "Install zsh-syntax-highlighting? [y]es, [n]o, [e]xit  "
     case $stdin.gets.chomp
     when 'y'
-      puts "install zsh-syntax-highlighting"
+      puts "Install zsh-syntax-highlighting"
       system %Q{git clone git://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"}
-    when 'q'
+    when 'e'
       exit
     else
-      puts "skipping zsh-syntax-highlighting, you will need to change ~/.oh-my-zsh/custom/plugins"
+      puts "Skipping zsh-syntax-highlighting, you will need to change ~/.oh-my-zsh/custom/plugins"
     end
   end
 end
 
-def install_homebrew_packages
-  system %Q{which brew}
-  unless $?.success?
-    system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
-  else
-    puts "you already have homebrew"
-  end
-
-  print "install homebrew packages? [ynq]"
-  case $stdin.gets.chomp
-  when 'y'
-    puts "installing homebrew packages"
-    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher terminal-notifier}
-    system %Q{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
-    system %Q{brew install --HEAD https://raw.githubusercontent.com/chankaward/tn/master/tn.rb}
-  when 'q'
-    exit
-  else
-    puts "skipping install homebrew packages"
-  end
-  puts
-  puts "running 'brew linkapps'"
-  system %Q{brew linkapps}
-  puts
-  update_homebrew_packages
-  puts "finish install homebrew packages"
+def install_fonts
+  puts "Installing custom font"
+  system %Q{cp -f $HOME/.dotfiles/fonts/* $HOME/Library/Fonts}
 end
 
-def update_homebrew_packages
-  puts "running 'brew doctor'"
+# terminal notifier
+def install_terminal_notifier
+  system %Q{brew install terminal-notifier}
+  system %Q{brew link terminal-notifier}
+  system %Q{brew install --HEAD https://raw.githubusercontent.com/chankaward/tn/master/tn.rb}
+end
+
+# The missing package manager for OS X
+def install_homebrew
+  print "Found "
+  system %Q{which brew}
+  unless $?.success?
+    puts "Installing homebrew and packages..."
+    system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+  else
+    puts "You already have homebrew!"
+  end
+  install_homebrew_packages
+end
+
+def install_homebrew_packages
+  puts "Install homebrew packages? [y]es, [n]o, [e]xit  "
+  case $stdin.gets.chomp
+  when 'y'
+    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher}
+  when 'e'
+    exit
+  else
+    puts "Skipping install homebrew packages"
+  end
+end
+
+def brew_tasks
   system %Q{brew doctor}
-  puts
-  puts "running 'brew update'"
   system %Q{brew update}
-  puts
-  puts "running 'brew upgrade'"
   system %Q{brew upgrade}
-  puts
-  puts "cleaning up cache"
+  system %Q{brew linkapps}
   system %Q{brew cleanup}
 end
 
 def install_rbenv
   puts "WARNING: rbenv is incompatible with RVM. Please make sure to fully uninstall RVM and remove any references to it from your shell initialization files before installing rbenv."
-  print "install rbenv? [ynq]"
+  puts
+  puts "Install rbenv? [y]es, [n]o, [e]xit  "
   case $stdin.gets.chomp
   when 'y'
     system %Q{brew install rbenv ruby-build}
-  when 'q'
+    install_rbenv_plugins
+  when 'e'
     exit
   else
-    puts "skipping install rbenv"
+    puts "Skipping install rbenv"
   end
 end
 
 def install_rbenv_plugins
-  puts "installing rbenv plugins"
+  puts "Installing rbenv plugins"
   system %Q{brew install rbenv-communal-gems rbenv-gem-rehash}
 end
 
-def install_vundle
-  if File.exist?(File.join(ENV['HOME'], ".vim/bundle/Vundle.vim"))
-    puts "found ~/.vim/bundle/Vundle.vim"
-  else
-    system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
-  end
+def install_macvim
+  puts "Installing macvim"
+  system %Q{brew install macvim --custom-icons --override-system-vim --with-lua --with-luajit}
+  system %Q{brew link macvim}
+  install_vundle
 end
 
-def install_fonts
-  puts "installing custom font"
-  system %Q{cp -f $HOME/.dotfiles/fonts/* $HOME/Library/Fonts}
+# vim plugin manager
+def install_vundle
+  if File.exist?(File.join(ENV['HOME'], ".vim/bundle/Vundle.vim"))
+    puts "Found ~/.vim/bundle/Vundle.vim"
+  else
+    puts "Installing vundle"
+    system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
+  end
 end
