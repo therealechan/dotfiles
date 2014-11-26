@@ -4,22 +4,38 @@ require 'erb'
 desc "Install dotfiles to your's home directory"
 task :install do
 
+  puts "-------------------------------------------------------------"
+  puts "                    Homebrew section"
+  puts "-------------------------------------------------------------"
   # homebrew section
   if RUBY_PLATFORM.downcase.include?("darwin")
     install_homebrew
     brew_tasks
+    puts
     install_rbenv
     install_terminal_notifier
     install_macvim
   end
+  puts
 
+  puts "-------------------------------------------------------------"
+  puts "                      Zsh section"
+  puts "-------------------------------------------------------------"
   # zsh section
   install_oh_my_zsh
   install_zsh_syntax_highlighting
   switch_to_zsh
+  puts
 
+  puts "-------------------------------------------------------------"
+  puts "                      Font section"
+  puts "-------------------------------------------------------------"
   install_fonts
+  puts
 
+  puts "-------------------------------------------------------------"
+  puts "                  File operation section"
+  puts "-------------------------------------------------------------"
   # files operation
   replace_all = false
   files = grep_dir_files
