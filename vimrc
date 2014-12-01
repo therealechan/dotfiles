@@ -244,7 +244,7 @@ nnoremap <leader>I :call IndentGuides()<cr>
 " Airline
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
-set guifont=Ubuntu_Mono_derivative_Powerline:h15
+set guifont=input:h14
 
 " syntastic
 " let g:syntastic_check_on_open = 1
