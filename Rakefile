@@ -172,6 +172,7 @@ def install_homebrew
   unless $?.success?
     puts "Installing homebrew and packages..."
     system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+    system %Q{brew doctor}
   else
     puts "You already have homebrew!"
   end
