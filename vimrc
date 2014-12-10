@@ -52,7 +52,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rizzatti/dash.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'chankaward/vim-railscasts-theme'
+Plugin 'chankaward/vim-gotham'
 Plugin 'bling/vim-airline'
 " Plugin 'elixir-lang/vim-elixir'
 " Plugin 'scrooloose/syntastic'
@@ -104,10 +104,7 @@ noremap <silent> <c-l> :nohls<cr><c-l>
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=800
 
-let base16colorspace=256
-" colorscheme base16-eighties
-colorscheme Railscasts
-" colorscheme base16-default
+colorscheme Gotham
 
 " gitgutter
 let g:gitgutter_escape_grep = 1
