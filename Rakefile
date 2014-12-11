@@ -216,7 +216,9 @@ end
 
 def install_rbenv_plugins
   puts "Installing rbenv plugins"
-  system %Q{brew install rbenv-communal-gems rbenv-gem-rehash}
+  system %Q{brew install rbenv-communal-gems rbenv-gem-rehash rbenv-bundler}
+  puts "Enable rbenv bundler..."
+  system %Q{rbenv bundler on}
 end
 
 def install_macvim
