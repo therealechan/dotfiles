@@ -60,6 +60,11 @@ task :update do
   system 'git pull origin master && rake install'
 end
 
+desc "Homebrew regular update"
+task :brew_tasks do
+  brew_tasks
+end
+
 def override_or_skip_file(file)
   puts "Overwrite ~/.#{file.sub(/\.erb$/, '')}? [y]es, [n]o, [a]ll, [e]xit   "
   case $stdin.gets.chomp
