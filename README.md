@@ -24,6 +24,3 @@ PluginInstall
 ```
 
 After installing, open a new terminal window to see the effects.
-
---------------------------
-Also you can use my iTerm2 [colorscheme](https://github.com/chankaward/railscasts-iterm2) if you like it
