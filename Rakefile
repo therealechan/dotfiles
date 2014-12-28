@@ -188,7 +188,7 @@ def install_homebrew_packages
   puts "Install homebrew packages? [y]es, [n]o, [e]xit  "
   case $stdin.gets.chomp
   when 'y'
-    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher}
+    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher mongodb}
   when 'e'
     exit
   else
