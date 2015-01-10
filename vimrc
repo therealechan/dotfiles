@@ -256,3 +256,11 @@ set regexpengine=1
 
 " vim markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Fugitive
+map <Leader>gs :Gstatus<cr>
+map <Leader>gd :Gdiff<cr>
+map <leader>gc :Gcommit<cr>
+map <leader>gb :Gblame<cr>
+map <leader>gl :Glog<cr>
+map <leader>gp :Git push<cr>
