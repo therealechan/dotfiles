@@ -77,7 +77,7 @@ alias h='heroku'
 alias m='mvim'
 alias subl='sublime'
 alias ts='tig status'
-alias vi='vim'
+alias vi='mvim'
 alias ll='ls -l'
 
 # git
