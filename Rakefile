@@ -37,6 +37,25 @@ task :install do
   puts "                  File operation section"
   puts "-------------------------------------------------------------"
   # files operation
+  file_operation
+end
+
+desc "Update the latest dotfiles"
+task :update do
+  system 'git pull origin master && rake install'
+end
+
+desc "Homebrew regular update"
+task :brew_tasks do
+  brew_tasks
+end
+
+desc "File Operation"
+task :file_operation do
+  file_operation
+end
+
+def file_operation
   replace_all = false
   files = grep_dir_files
   files.each do |file|
@@ -53,16 +72,6 @@ task :install do
       link_file(file)
     end
   end
-end
-
-desc "Update the latest dotfiles"
-task :update do
-  system 'git pull origin master && rake install'
-end
-
-desc "Homebrew regular update"
-task :brew_tasks do
-  brew_tasks
 end
 
 def override_or_skip_file(file)
