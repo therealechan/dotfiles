@@ -79,6 +79,7 @@ alias subl='sublime'
 alias ts='tig status'
 alias vi='mvim'
 alias ll='ls -l'
+alias d='dict' #Youdao dict alias
 
 # git
 alias g='git'
