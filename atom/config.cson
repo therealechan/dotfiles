@@ -1,0 +1,24 @@
+"*":
+  editor:
+    fontFamily: "input"
+    fontSize: 13
+    showInvisibles: true
+    showIndentGuide: true
+    invisibles: {}
+  core:
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  welcome:
+    showOnStartup: false
+  whitespace:
+    removeTrailingWhitespace: true
+    ignoreWhitespaceOnCurrentLine: false
+    ensureSingleTrailingNewline: true
+  "exception-reporting":
+    userId: "b6917109-8650-33d4-94c7-9edad015d73f"
+  linter: {}
+  "highlight-column": {}
+"highlight-line":
+  hideHighlightOnSelect: true

@@ -90,7 +90,8 @@ def override_or_skip_file(file)
 end
 
 def grep_dir_files
-  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh fonts install.sh]
+  files = Dir['*'] - %w[Rakefile README.md LICENSE.md oh-my-zsh fonts install.sh atom]
+  files += Dir['atom/*']
   files << "oh-my-zsh/custom/vpn.zsh"
   files << "oh-my-zsh/custom/chankaward.zsh-theme"
   files
