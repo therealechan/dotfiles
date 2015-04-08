@@ -23,3 +23,7 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  'L': 'vim-mode:move-to-last-character-of-line'
+  'H': 'vim-mode:move-to-first-character-of-line'
