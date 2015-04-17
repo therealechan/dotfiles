@@ -20,5 +20,11 @@
     userId: "b6917109-8650-33d4-94c7-9edad015d73f"
   linter: {}
   "highlight-column": {}
+  "block-cursor":
+    primaryColor:
+      red: 195
+      green: 59
+      blue: 50
+      alpha: 1
 "highlight-line":
   hideHighlightOnSelect: true
