@@ -8,7 +8,7 @@
   core:
     themes: [
       "one-dark-ui"
-      "facebook-syntax"
+      "redui-jm-syntax"
     ]
   welcome:
     showOnStartup: false
