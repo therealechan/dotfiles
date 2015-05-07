@@ -12,7 +12,7 @@ task :install do
     install_homebrew
     brew_tasks
     puts
-    install_rbenv
+    #install_rbenv
     install_terminal_notifier
     install_macvim
   end
