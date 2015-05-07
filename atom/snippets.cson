@@ -25,3 +25,18 @@
   'Binding.pry':
     'prefix': 'bp'
     'body': 'binding.pry'
+
+'.source.ruby':
+  'Byebug':
+    'prefix': 'bb'
+    'body': 'byebug'
+
+'.text.erb':
+  'erb tag':
+    'prefix': '='
+    'body': '<%= $1 %>'
+
+'.text.erb':
+  'erb tag':
+    'prefix': 'erb'
+    'body': '<% $1 %>'
