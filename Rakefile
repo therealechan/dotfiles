@@ -12,6 +12,7 @@ task :install do
     install_homebrew
     brew_tasks
     puts
+    install_rvm
     #install_rbenv
     install_terminal_notifier
     install_macvim
@@ -250,5 +251,16 @@ def install_vundle
   else
     puts "Installing vundle"
     system %Q{git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim}
+  end
+end
+
+def install_rvm
+  if File.exist?(File.join(ENV['HOME'], ".rvm"))
+    puts "Found ~/.rvm"
+  else
+    puts "Installing RVM"
+    puts "WARNING: You need to download GPG from https://gpgtools.org/ if you haven't install it."
+    system %Q{gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3}
+    system %Q{\curl -sSL https://get.rvm.io | bash -s stable}
   end
 end

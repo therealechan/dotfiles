@@ -64,6 +64,10 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 # eval "$(rbenv init -)"
 # export PATH="$HOME/.rbenv/bin:$PATH"
 
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 export PATH=/usr/local/bin:$PATH # load homebrew git
 
 export CLICOLOR=1
