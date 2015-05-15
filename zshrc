@@ -54,7 +54,7 @@ export VIM_APP_DIR=/Applications
 # Finished MacVim environment
 
 # shortcut for psql
-export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 #export PS1="@\h:\w $"
 
 #sets up theprompt color (currently a green similar to linux terminal)
