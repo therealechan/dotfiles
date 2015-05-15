@@ -210,7 +210,7 @@ end
 def brew_tasks
   system %Q{brew doctor}
   system %Q{brew update}
-  system %Q{brew upgrade}
+  system %Q{brew upgrade --all}
   system %Q{brew linkapps}
   system %Q{brew cleanup}
 end
