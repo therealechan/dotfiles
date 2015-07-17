@@ -1,14 +1,14 @@
 "*":
   editor:
     fontFamily: "input"
-    fontSize: 13
+    fontSize: 12
     showInvisibles: true
     showIndentGuide: true
     invisibles: {}
   core:
     themes: [
-      "one-dark-ui"
-      "facebook-syntax"
+      "atom-material-ui"
+      "gotham-syntax"
     ]
   welcome:
     showOnStartup: false
