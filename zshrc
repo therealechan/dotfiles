@@ -119,6 +119,7 @@ alias grbd="git push origin --delete"
 alias gdu='git checkout develop && git pull origin develop'
 alias gmu='git checkout master && git pull origin master'
 alias gs='git status'
+alias tnb='tn bundle'
 
 # deploy
 alias deploy-staging="cap staging deploy"
