@@ -54,6 +54,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'bling/vim-airline'
+Plugin 'suan/vim-instant-markdown'
 " Plugin 'elixir-lang/vim-elixir'
 " Plugin 'scrooloose/syntastic'
 
@@ -264,3 +265,10 @@ map <leader>gc :Gcommit<cr>
 map <leader>gb :Gblame<cr>
 map <leader>gl :Glog<cr>
 map <leader>gp :Git push<cr>
+
+" Instant Markdown
+"   This will cause vim-instant-markdown to only refresh on the following events:
+"     - No keys have been pressed for a while
+"     - A while after you leave insert mode
+"     - You save the file being edited
+let g:instant_markdown_slow = 1
