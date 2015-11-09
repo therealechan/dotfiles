@@ -199,7 +199,7 @@ def install_homebrew_packages
   puts "Install homebrew packages? [y]es, [n]o, [e]xit  "
   case $stdin.gets.chomp
   when 'y'
-    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher mongodb}
+    system %Q{brew install autojump git leiningen mysql node tig tree tmux imagemagick git-extras the_silver_searcher mongodb gpg}
   when 'e'
     exit
   else
@@ -259,7 +259,6 @@ def install_rvm
     puts "Found ~/.rvm"
   else
     puts "Installing RVM"
-    puts "WARNING: You need to download GPG from https://gpgtools.org/ if you haven't install it."
     system %Q{gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3}
     system %Q{\curl -sSL https://get.rvm.io | bash -s stable}
   end
