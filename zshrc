@@ -122,8 +122,7 @@ alias gs='git status'
 alias tnb='tn bundle'
 
 # deploy
-alias deploy-staging="cap staging deploy"
-alias deploy-staging-migrations="cap staging deploy:migrations"
+alias deploy-staging="bundle exec cap staging deploy:migrations"
 alias deploy-staging-rake="cap staging remote:rake"
 alias deploy-staging-console="cap staging remote:console"
 alias deploy-staging-database-update="cap staging update:database"
@@ -131,8 +130,7 @@ alias deploy-staging-log="cap staging remote:run 'tail -n 10 log/staging.log'"
 alias deploy-staging-tail-log="cap staging remote:tail_log"
 
 alias deploy-production-log="cap production remote:run 'tail -n 100 log/production.log'"
-alias deploy-production="cap production deploy"
-alias deploy-production-migrations="cap production deploy:migrations"
+alias deploy-production="bundle exec cap production deploy:migrations"
 alias deploy-production-rake="cap production remote:rake"
 alias deploy-production-console="cap remote:console"
 alias deploy-production-database-update="cap production update:database"
