@@ -72,7 +72,7 @@ export PATH=/usr/local/bin:$PATH # load homebrew git
 
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-export EDITOR=atom # set default editor
+export EDITOR=vi # set default editor
 
 # basic
 alias ruby-httpd='open http://localhost:5000; ruby -run -e httpd . -p 5000'
