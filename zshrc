@@ -81,7 +81,6 @@ alias h='heroku'
 alias m='mvim'
 alias subl='sublime'
 alias ts='tig status'
-alias vi='mvim'
 alias ll='ls -l'
 alias d='dict' #Youdao dict alias
 
