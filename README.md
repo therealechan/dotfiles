@@ -9,18 +9,14 @@
 
 ```
 
-## Installation
+## WARNING
+*DON'T USE THIS DOTFILE UNLESS YOU KNOW WHAT YOU DOING*
+
+#### Installation
 ```terminal
 sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/dotfiles/master/install.sh`"
 ```
-### Install Vim Plugins
-``` terminal
-cd ~/.dotfiles
-mvim vimrc
+#### Install Vim Plugins
 ```
-in ```vimrc``` run
-```terminal
 PluginInstall
 ```
-
-After installing, open a new terminal window to see the effects.
