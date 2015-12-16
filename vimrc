@@ -55,7 +55,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'bling/vim-airline'
 Plugin 'suan/vim-instant-markdown'
-" Plugin 'elixir-lang/vim-elixir'
+Plugin 'elixir-lang/vim-elixir'
 " Plugin 'scrooloose/syntastic'
 
 " Snipmate requirements
