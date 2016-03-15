@@ -1,9 +1,10 @@
---- 
-:verbose: true
-gem: --no-ri --no-rdoc
-:update_sources: true
-:sources:
-- https://rubygems.org
+---
 :backtrace: false
 :bulk_threshold: 1000
-:benchmark: false
+:sources:
+- https://gems.ruby-china.org/
+- https://rubygems.org
+:update_sources: true
+:verbose: true
+gem: "--no-ri --no-rdoc"
+benchmark: false
