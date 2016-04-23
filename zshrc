@@ -40,7 +40,7 @@ export UPDATE_ZSH_DAYS=7
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails rake brew cap lein npm gem autojump web-search zsh-syntax-highlighting)
+plugins=(git osx ruby rails rake brew cap lein npm gem autojump web-search zsh-syntax-highlighting bgnotify)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -137,3 +137,19 @@ alias deploy-production-rake="cap production remote:rake"
 alias deploy-production-console="cap remote:console"
 alias deploy-production-database-update="cap production update:database"
 alias deploy-production-tail-log="cap remote:tail_log"
+
+# bgnotify settings
+bgnotify_threshold=4  ## set your own notification threshold
+
+function bgnotify_formatted {
+  ## $1=exit_status, $2=command, $3=elapsed_time
+  [ $1 -eq 0 ] && title="Hell Yeah!!!" || title="Oh Fuck!!!"
+  bgnotify "$title -- after $3 s" "$2";
+}
+
+# iterm2 shell intergration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/sbin:$PATH"
