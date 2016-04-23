@@ -14,7 +14,7 @@
 
 #### Installation
 ```terminal
-sh -c "`curl -fsSL https://raw.githubusercontent.com/chankaward/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.githubusercontent.com/therealechan/dotfiles/master/install.sh`"
 ```
 #### Install Vim Plugins
 ```
