@@ -40,7 +40,9 @@ export UPDATE_ZSH_DAYS=7
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails rake brew lein npm gem autojump web-search zsh-syntax-highlighting bgnotify)
+
+plugins=(git macos ruby rails rake brew cap lein npm gem autojump web-search zsh-syntax-highlighting bgnotify)
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -123,21 +125,6 @@ alias gmu='git checkout master && git pull origin master'
 alias gs='git status'
 alias tnb='tn bundle'
 
-# deploy
-alias deploy-staging="bundle exec cap staging deploy:migrations"
-alias deploy-staging-rake="cap staging remote:rake"
-alias deploy-staging-console="cap staging remote:console"
-alias deploy-staging-database-update="cap staging update:database"
-alias deploy-staging-log="cap staging remote:run 'tail -n 10 log/staging.log'"
-alias deploy-staging-tail-log="cap staging remote:tail_log"
-
-alias deploy-production-log="cap production remote:run 'tail -n 100 log/production.log'"
-alias deploy-production="bundle exec cap production deploy:migrations"
-alias deploy-production-rake="cap production remote:rake"
-alias deploy-production-console="cap remote:console"
-alias deploy-production-database-update="cap production update:database"
-alias deploy-production-tail-log="cap remote:tail_log"
-
 # bgnotify settings
 bgnotify_threshold=4  ## set your own notification threshold
 
@@ -153,3 +140,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
+
+# Proxy
+export http_proxy='http://127.0.0.1:9090'
+export https_proxy='http://127.0.0.1:9090'
+export PATH="$PATH:$HOME/.proxy"
