@@ -56,6 +56,7 @@ Plugin 'chankaward/vim-railscasts-theme'
 Plugin 'bling/vim-airline'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'tomlion/vim-solidity'
 " Plugin 'scrooloose/syntastic'
 
 " Snipmate requirements
